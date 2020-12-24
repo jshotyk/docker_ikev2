@@ -1,12 +1,13 @@
-FROM alpine:3.9
+FROM alpine:3.12
 
-ENV HOST HOSTNAME
+LABEL tags="alpine-3.12" \
+      build_ver="23-12-2020"
 
-LABEL tags="latest" \
-      build_ver="24-03-2020"
-
-RUN apk -U upgrade \
-    && apk add -U --no-cache openssl util-linux strongswan bash \
+RUN apk add --no-cache \
+    curl=7.69.1-r3 \
+    openssl=1.1.1i-r0 \
+    util-linux=2.35.2-r0 \
+    strongswan=5.8.4-r2 \
     && rm -rf /var/cache/apk/* \
     && rm -f /etc/ipsec.secrets
 
