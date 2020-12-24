@@ -8,7 +8,7 @@ Fork from [`gaomd/ikev2-vpn-server`](https://hub.docker.com/r/gaomd/ikev2-vpn-se
 
 ### 1. Clone this repository
 
-    git clone https://github.com/VictorBurtsev/ikev2-vpn-server.git && git checkout alpine-3.12 && cd ikev2-vpn-server
+    git clone https://github.com/VictorBurtsev/ikev2-vpn-server.git && cd ikev2-vpn-server && git checkout alpine-3.12
 
 ### 2. Build docker image
 
