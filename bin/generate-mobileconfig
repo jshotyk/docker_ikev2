@@ -22,8 +22,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+HOST=$(curl -s http://checkip.amazonaws.com)
+
 : ${PROFILE_NAME="My IKEv2 VPN"}
-: ${PROFILE_IDENTIFIER=$(curl http://checkip.amazonaws.com)}
+: ${PROFILE_IDENTIFIER=${HOST}}
 : ${PROFILE_UUID=$(hostname)}
 
 # These variable, especially CONN_UUID, are bind to per username,
@@ -32,8 +34,8 @@
 : ${CONN_NAME="My IKEv2 VPN"}
 : ${CONN_IDENTIFIER="${PROFILE_IDENTIFIER}.shared-configuration"}
 : ${CONN_UUID=$(uuidgen)}
-: ${CONN_HOST=$(curl http://checkip.amazonaws.com.)}
-: ${CONN_REMOTE_IDENTIFIER=$(curl http://checkip.amazonaws.com)}
+: ${CONN_HOST=${HOST}}
+: ${CONN_REMOTE_IDENTIFIER=${HOST}}
 
 CONN_SHARED_SECRET=$(cat /etc/ipsec.secrets | sed 's/.*"\(.*\)"/\1/g')
 

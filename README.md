@@ -8,7 +8,7 @@ Fork from [`gaomd/ikev2-vpn-server`](https://hub.docker.com/r/gaomd/ikev2-vpn-se
 
 ### 1. Clone this repository
 
-    git clone https://github.com/VictorBurtsev/ikev2-vpn-server.git && cd ikev2-vpn-server
+    git clone https://github.com/VictorBurtsev/ikev2-vpn-server.git && git checkout alpine-3.12 && cd ikev2-vpn-server
 
 ### 2. Build docker image
 
@@ -20,7 +20,7 @@ Fork from [`gaomd/ikev2-vpn-server`](https://hub.docker.com/r/gaomd/ikev2-vpn-se
 
 ### 4. Generate the .mobileconfig (for iOS / macOS) to the current path
 
-    docker exec -it vpn-server generate-mobileconfig > ikev2-vpn.mobileconfig
+    docker exec -it ikev2-vpn-server generate-mobileconfig > ikev2-vpn.mobileconfig
 
 Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via SSH tunnel (`scp`) or any other secure methods.
 
@@ -36,7 +36,7 @@ Upon container creation, a *shared secret* was generated for authentication purp
 
 ## License
 
-Copyright (c) 2018 Mengdi Gao, Nebukad93,  This software is licensed under the [MIT License](LICENSE).
+Copyright (c) 2018 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
 
 ---
 
