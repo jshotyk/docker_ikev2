@@ -48,20 +48,24 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
         esp=3des-sha1!
         
     conn ikev2-vpn
-        right=xxx.xxx.xxx.xxx # server ip 
+        right=your_server_ip
         rightsubnet=0.0.0.0/0,::/0
-        left=xx.x.x.x # client ip
+        left=your_client_ip
         leftsubnet=10.8.0.0/16
         leftsourceip=%config
         auto=start
 
 #### 3.3 Copy config in */etc/ipsec.secrets*
 
-    : PSK "1235qQ28AG+Jtw68kQUJS/M8VDZ8GXMWQAHJJHGJHG="
+    : PSK "your_psk"
 
 #### 3.4 Option - if apparmor work on system add in file */etc/apparmor.d/usr.lib.ipsec.charon* line
 
     /etc/resolv.conf          w,
+
+And apply changes
+
+    apparmor_parser -r /etc/apparmor.d/usr.lib.ipsec.charon
 
 #### 3.5 Start linux client
 
