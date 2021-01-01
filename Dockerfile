@@ -7,7 +7,6 @@ COPY etc /etc
 COPY usr/bin /usr/bin
 
 RUN apk add --no-cache \
-    util-linux=2.35.2-r0 \
     strongswan=5.8.4-r2 \
     && rm -rf /var/cache/apk/* \
     && rm -f /etc/ipsec.secrets

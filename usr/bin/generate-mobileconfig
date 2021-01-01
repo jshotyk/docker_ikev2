@@ -33,7 +33,7 @@ HOST=$(wget -qO- http://checkip.amazonaws.com)
 
 : ${CONN_NAME="My IKEv2 VPN"}
 : ${CONN_IDENTIFIER="${PROFILE_IDENTIFIER}.shared-configuration"}
-: ${CONN_UUID=$(uuidgen)}
+: ${CONN_UUID=$(cat /proc/sys/kernel/random/uuid)}
 : ${CONN_HOST=${HOST}}
 : ${CONN_REMOTE_IDENTIFIER=${HOST}}
 
