@@ -71,6 +71,12 @@ And apply changes
 
     ipsec reload && ipsec restart && ipsec up ikev2-vpn
 
+#### 4. Configure client for Windows 7/10
+
+#### 4.1 Windows 7/10 dont support built-in PSK auth method - simple install it:
+
+    http://www.thegreenbow.com/
+
 #### Technical Details
 
 Upon container creation, a *shared secret* was generated for authentication purpose, no *certificate*, *username*, or *password* was ever used, simple life!
