@@ -8,7 +8,6 @@ COPY usr/bin /usr/bin
 
 RUN apk add --no-cache \
     curl=7.69.1-r3 \
-    openssl=1.1.1i-r0 \
     util-linux=2.35.2-r0 \
     strongswan=5.8.4-r2 \
     && rm -rf /var/cache/apk/* \
