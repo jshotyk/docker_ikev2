@@ -59,7 +59,7 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
 
     : PSK "your_psk"
 
-#### 3.4 Option - if apparmor work on system add in file */etc/apparmor.d/usr.lib.ipsec.charon* line
+#### 3.4 Option - if apparmor work on system add in file */etc/apparmor.d/usr.lib.ipsec.charon* line (or use resolvconf framework)
 
     /etc/resolv.conf          w,
 
@@ -67,7 +67,11 @@ And apply changes
 
     apparmor_parser -r /etc/apparmor.d/usr.lib.ipsec.charon
 
-#### 3.5 Start linux client
+#### 3.5 Option - if any urls dont work try reduce MTU
+
+     echo 'pre-up /sbin/ifconfig $IFACE mtu 1438' >> /etc/network/interfaces
+
+#### 3.6 Start linux client
 
     ipsec reload && ipsec restart && ipsec up ikev2-vpn
 
