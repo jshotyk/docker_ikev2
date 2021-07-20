@@ -44,8 +44,8 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
         type=tunnel
         keyexchange=ikev2
         authby=secret
-        ike=3des-sha1-modp1024!
-        esp=3des-sha1!
+        ike=aes256-sha1-modp1024!
+        esp=aes256-sha1!
         
     conn ikev2-vpn
         right=your_server_ip
@@ -69,7 +69,7 @@ And apply changes
 
 #### 3.5 Option - if any urls dont work try reduce MTU
 
-     echo 'pre-up /sbin/ifconfig $IFACE mtu 1438' >> /etc/network/interfaces
+     echo 'pre-up /sbin/ifconfig $IFACE mtu 1400' >> /etc/network/interfaces
 
 #### 3.6 Start linux client
 
