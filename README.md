@@ -50,7 +50,7 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
     conn ikev2-vpn
         right=your_server_ip
         rightsubnet=0.0.0.0/0,::/0
-        left=your_client_ip
+        left=%config
         leftsubnet=10.8.0.0/16
         leftsourceip=%config
         auto=start
