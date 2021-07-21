@@ -95,10 +95,10 @@ cat <<EOF
                     <dict>
                         <!-- @see https://developer.apple.com/documentation/networkextension/nevpnikev2encryptionalgorithm -->
                         <key>EncryptionAlgorithm</key>
-                        <string>AES-128</string><!-- Alternatives include: AES-256, AES-256-GCM, etc -->
+                        <string>AES-256</string><!-- Alternatives include: AES-256, AES-256-GCM, etc -->
                         <!-- @see https://developer.apple.com/documentation/networkextension/nevpnikev2integrityalgorithm -->
                         <key>IntegrityAlgorithm</key>
-                        <string>SHA1-96</string><!-- Alternatives include: SHA2-256, SHA2-512, etc -->
+                        <string>SHA2-256</string><!-- Alternatives include: SHA2-256, SHA2-512, etc -->
                         <!-- @see https://developer.apple.com/documentation/networkextension/nevpnikev2diffiehellmangroup -->
                         <key>DiffieHellmanGroup</key>
                         <integer>14</integer><!-- Alternatives include 20, 21, 31, etc -->
@@ -106,9 +106,9 @@ cat <<EOF
                     <key>ChildSecurityAssociationParameters</key>
                     <dict>
                         <key>EncryptionAlgorithm</key>
-                        <string>AES-128</string><!-- Alternatives include: AES-256, AES-256-GCM, etc -->
+                        <string>AES-256</string><!-- Alternatives include: AES-256, AES-256-GCM, etc -->
                         <key>IntegrityAlgorithm</key>
-                        <string>SHA1-96</string><!-- Alternatives include: SHA2-256, SHA2-512, etc -->
+                        <string>SHA2-256</string><!-- Alternatives include: SHA2-256, SHA2-512, etc -->
                         <key>DiffieHellmanGroup</key>
                         <integer>14</integer><!-- Alternatives include 20, 21, 31, etc -->
                     </dict>
