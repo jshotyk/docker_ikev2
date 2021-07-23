@@ -44,8 +44,8 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
         type=tunnel
         keyexchange=ikev2
         authby=secret
-        ike=aes256-sha1-modp1024!
-        esp=aes256-sha1!
+        ike=aes256-sha2_256-modp2048!
+        esp=aes256-sha2_256!
         
     conn ikev2-vpn
         right=your_server_ip
@@ -55,7 +55,7 @@ Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via 
         leftsourceip=%config
         auto=start
 
-#### 3.3 Copy config in */etc/ipsec.secrets*
+#### 3.3 Copy secret from server */etc/ipsec.secrets* into client host */etc/ipsec.secrets*
 
     : PSK "your_psk"
 
@@ -87,4 +87,4 @@ Upon container creation, a *shared secret* was generated for authentication purp
 
 #### License
 
-Copyright (c) 2018 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
+Copyright (c) 2021 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).

@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-HOST=$(wget -qO- http://checkip.amazonaws.com)
+HOST=$(wget -qO- eth0.me)
 
 : ${PROFILE_NAME="My IKEv2 VPN"}
 : ${PROFILE_IDENTIFIER=${HOST}}
