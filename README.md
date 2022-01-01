@@ -87,4 +87,4 @@ Upon container creation, a *shared secret* was generated for authentication purp
 
 #### License
 
-Copyright (c) 2021 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
+Copyright (c) 2022 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
