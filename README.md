@@ -6,21 +6,21 @@ IKEv2 VPN Server based on Alpine image. Support OS clients - macOS, iOS, Linux, 
 
 #### 1.1 Clone this repository
 
-    git clone https://github.com/VictorBurtsev/ikev2-vpn-server.git && cd ikev2-vpn-server
+    git clone https://github.com/VictorBurtsev/ikev2-vpn-server-alpine.git && cd ikev2-vpn-server-alpine
 
 #### 1.2 Build docker image
 
-    docker build --no-cache -t ikev2-vpn-server:alpine .
+    docker build --no-cache -t ikev2-vpn-server-alpine:alpine .
 
 #### 1.3 Start the IKEv2 VPN Server
 
-    docker run --cap-add=NET_ADMIN -d --name ikev2-vpn-server --restart=always -p 500:500/udp -p 4500:4500/udp ikev2-vpn-server:alpine
+    docker run --cap-add=NET_ADMIN -d --name ikev2-vpn-server --restart=always -p 500:500/udp -p 4500:4500/udp ikev2-vpn-server-alpine:alpine
 
 #### 2. Configure client for iOS / macOS
 
 #### 2.1 Generate the .mobileconfig (for iOS / macOS) to the current path
 
-    docker exec -it ikev2-vpn-server generate-mobileconfig > ikev2-vpn.mobileconfig
+    docker exec -it ikev2-vpn-server-alpine generate-mobileconfig > ikev2-vpn.mobileconfig
 
 Transfer the generated `ikev2-vpn.mobileconfig` file to your local computer via SSH tunnel (`scp`) or any other secure methods.
 
