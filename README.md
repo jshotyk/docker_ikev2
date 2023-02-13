@@ -79,10 +79,14 @@ And apply changes
 
     http://www.thegreenbow.com/
 
+#### 5. Configure client for Android
+
+#### 5.1 Use built-in PSK auth method in native Android client
+
 #### Technical Details
 
 Upon container creation, a *shared secret* was generated for authentication purpose, no *certificate*, *username*, or *password* was ever used, simple life!
 
 #### License
 
-Copyright (c) 2022 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
+Copyright (c) 2023 Mengdi Gao, Nebukad93, vl_burtsev  This software is licensed under the [MIT License](LICENSE).
