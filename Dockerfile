@@ -1,17 +1,25 @@
-FROM alpine:3.17
+FROM alpine:latest
 
-LABEL tags="alpine-3.17" \
-      build_ver="13-02-2023"
+# Переключаемся на пользователя root
+USER root
 
+# Копируем необходимые конфигурационные файлы и исполняемые файлы в контейнер
 COPY etc /etc
-COPY usr/bin /usr/bin
+COPY bin /usr/bin
 
-RUN apk add --no-cache \
-                strongswan=5.9.8-r1 \
-                    && rm -rf /var/cache/apk/* \
-                    && rm -f /etc/ipsec.secrets
+# Добавляем репозиторий для установки пакетов из тестовой ветки Alpine Linux
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
+# Устанавливаем необходимые пакеты: strongswan, iptables и удаляем кэш
+RUN apk add --no-cache strongswan iptables \
+    && rm -rf /var/cache/apk/* \
+    && rm -f /etc/ipsec.secrets
+
+# Обновляем пакет awall
+RUN apk add -u awall
+
+# Открываем порты 500/udp и 4500/udp
 EXPOSE 500/udp 4500/udp
 
+# Задаем точку входа для контейнера - запуск VPN
 ENTRYPOINT ["start-vpn"]
-
