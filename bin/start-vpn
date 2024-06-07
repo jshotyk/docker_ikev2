@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Установка правил маскарадинга (NAT) в iptables для обработки IPsec трафика
-iptables -t nat -A POSTROUTING -s 172.17.0.0/16 -o eth0 -m policy --dir out --pol ipsec -j ACCEPT
-iptables -t nat -A POSTROUTING -s 172.17.0.0/16 -o eth0 -j MASQUERADE
+iptables-legacy -t nat -A POSTROUTING -s 172.17.0.0/16 -o eth0 -m policy --dir out --pol ipsec -j ACCEPT
+iptables-legacy -t nat -A POSTROUTING -s 172.17.0.0/16 -o eth0 -j MASQUERADE
 
 # Создание общего секрета для StrongSwan
 SHARED_SECRET="123$(dd if=/dev/urandom count=1 bs=32 2>/dev/null | base64)"
